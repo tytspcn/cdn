@@ -72,6 +72,7 @@ a:hover{
 .a-title{
 	font-size: 24px;
 	word-wrap: break-word;
+	line-height: 1.4;
 }
 #yoniu-msg{
 	position: fixed;
@@ -297,7 +298,6 @@ a:hover{
 	display: block;
     width: 100%;
 	position: relative;
-	overflow: hidden;
 	color: var(--hightlight);
 	overflow: hidden;
 }
@@ -313,8 +313,10 @@ a:hover{
 	-ms-transition: all 0.6s;
 }
 .bigImg-article:hover .article-bigImg-img img{
-	transform: scale(1.2);
-	-ms-transform: scale(1.2);
+	transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
 }
 .article-bigImg-img:hover{
 	color: var(--hightlight);
@@ -329,11 +331,11 @@ a:hover{
     display: block;
     clear: both;
     position: absolute;
-	background: linear-gradient(to top, rgba(0,0,0,.5), transparent);
+	background: rgba(0,0,0,.2);
     left: 0;
 	right: 0;
-    bottom: 0;
-	height: 50%;
+    top: 0;
+	bottom: 0;
     pointer-events: none;
 	z-index: 1;
 }
@@ -349,9 +351,6 @@ a:hover{
 	text-overflow: ellipsis;
 	transition: all .2s ease-out;
 	z-index: 2;
-}
-.bigImg-article:hover .article-bigImg-title{
-	transform: translateY(-5px);
 }
 .article-bigImg-content{
 	margin: 10px;
@@ -453,8 +452,8 @@ a:hover{
 	-ms-transition: all 0.6s;
 }
 .article-left:hover .article-rightImg-Img img{
-	transform: scale(1.2);
-	-ms-transform: scale(1.2);
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
 }
 .article-rightImg-Img>img{
 	position: absolute;
@@ -595,14 +594,6 @@ a.T-content>p{
 .gallery{
 	margin:-1%!important;
     margin-top: 10px!important;
-}
-.gallery-item img{
-	transition: all 0.6s;
-	-ms-transition: all 0.6s;
-}
-.gallery-item:hover img{
-    transform: scale(1.2);
-    -ms-transform: scale(1.2);
 }
 .gallery .gallery-item {
 	float: left;
@@ -792,7 +783,7 @@ a.T-content>p{
     padding: 0 10px;
 }
 .postnoT .a-title{
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 .a-post-content p{
     margin-bottom: 10px;
@@ -970,6 +961,36 @@ a.T-content>p{
     background-color: var(--contentbg);
     border-color: var(--themecolorop);
 }
+.imlocked{
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	border: unset;
+	padding: 1.25rem 1.25rem;
+}
+.imlocked>.fa{
+	position: absolute;
+	right: 10px;
+	bottom: -10px;
+	font-size: 48px;
+	color: var(--border);
+	z-index: 0;
+}
+.imlocked input{
+	z-index: 1;
+}
+.imlocked .a-text{
+	border-radius: 5px;
+	border: solid 1px var(--border);
+	padding: 5px 10px;
+	margin-right: 10px;
+	min-width: 240px;
+}
+.imlocked .a-text:focus {
+    border-color: var(--themecolor);
+	background-color: var(--bgcolor);
+}
 .content-fa{
 	min-width: 14px;
 	margin-right: 10px;
@@ -1134,6 +1155,7 @@ textarea, input{
 }
 .comment-content p{
 	margin-bottom: 10px;
+	word-break: break-all;
 }
 .comment-body ol{
 	padding: 0;
@@ -1444,7 +1466,7 @@ p#back-to-top {
 	bottom: 30px;
 	right: 30px;
 	font-size: 40px;
-	z-index: 99999;
+	z-index: 1039;
 }
 p#back-to-top a{
 	color: var(--contentcolor);
@@ -1554,11 +1576,8 @@ p#back-to-top a{
 	.yoniu-nav-list{
 		width: unset;
 	}
-	.article-bigImg-icon>div{
-		font-size: 14px;
-	}
-	.article-bigImg-icon>div i{
-		font-size: 16px;
+	.postnoT .a-title , .a-title{
+		font-size: 1.5rem;
 	}
 	.cm-form>div{
 		flex-direction: column;
